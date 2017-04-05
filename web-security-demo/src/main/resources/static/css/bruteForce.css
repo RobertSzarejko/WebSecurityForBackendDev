@@ -1,0 +1,44 @@
+#bruteForceData{
+    width: 800px;
+    height: 300px;
+    margin: auto;
+}
+
+.digit{
+    font-size: 200px;
+    border-radius: 20px;
+    border-style: solid;
+    margin: 2px;
+}
+
+.final{
+    font-size: 200px;
+    color: #2b542c;
+    border-radius: 20px;
+    border-style: solid;
+    margin: 2px;
+}
+
+.hash {
+    font-size: 30px;
+    width: 700px;
+    font-weight: bold;
+}
+
+.algorithm {
+    font-size: 25px;
+    font-weight: bold;
+    width: 200px;
+}
+
+.bruteForce {
+    margin-top: 50px;
+}
+
+#timer {
+    width: 800px;
+    height: 300px;
+    margin: auto;
+    font-size: 100px;
+    text-align: right;
+}

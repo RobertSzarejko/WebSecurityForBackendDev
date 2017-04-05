@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/prezentacja.css"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="description" content="Co back-end developer powinien wiedzieć o Web Security" />
+    <meta name="author" content="Robert Szarejko" />
+    <meta charset="UTF-8">
+    <title>Co back-end developer powinien wiedzieć o Web Security</title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-grid.css" rel="stylesheet" />
+    <link href="css/bootstrap-reboot.css" rel="stylesheet" />
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    <link href="css/prezentacja.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+
+</head>
+<body>
+
+    <div id="impress">
+
+
+        <div class="step" data-x="-1x" data-y="-2y">
+            <img class="img-full" src="img/4devBegin.jpg">
+        </div>
+
+        <div class="step" data-x="0" data-y="-2y">
+            <img class="img-full" src="img/stereotypes_programmer.jpg">
+        </div>
+
+        <div class="step slide" data-x="1x" data-y="-2y">
+            <p class="title">O czym chciałbym opowiedzieć:</p>
+            <p class="point">1. Authentication</p>
+            <p class="point">2. Authorization</p>
+            <p class="point">3. Integralność danych</p>
+            <p class="point">4. Przeciwdziałanie podatnościom</p>
+            <p class="point">5. Na co warto zwrócić uwagę</p>
+        </div>
+
+        <div class="step" data-x="0x" data-y="0y" data-scale="2">
+            <img class="img-full" src="img/risk-based-authentication.jpg">
+        </div>
+
+        <div class="step slide" data-x="0x" data-y="1x" data-rotate="90">
+            <p class="title">Podstawowe kategorie uwierzytelnienia</p>
+            <p class="point">1. Co wiem</p>
+            <p class="point">2. Co mam</p>
+            <p class="point">3. Czym jestem</p>
+        </div>
+
+        <div class="step slide" data-x="0x" data-y="2x" data-rotate="90">
+            <img class="img-full" src="img/clevermaps_sequence_diagram.png">
+        </div>
+
+        <div class="step slide" data-x="0x" data-y="3x" data-rotate="90">
+            <div class="center">
+                <img width="550" src="img/login.png">
+            </div>
+        </div>
+
+        <div class="step " data-x="0" data-y="4x" data-rotate="90">
+            <img class="img-full" src="img/passwordeasy.jpg">
+        </div>
+
+        <div class="step slide" data-x="-1y" data-y="4x" data-rotate="90">
+            <p class="title">Funkcja hashująca</p>
+            <p class="point">1. Jednokierunkowa</p>
+            <p class="point">2. Wysoka odporność na kolizje</p>
+            <p class="point">3. Duża zmienność wyjść</p>
+        </div>
+
+        <div class="step" data-x="-2y" data-y="4x" data-rotate="90">
+            <iframe class="iframe-full" src="http://localhost:8080/crypto"></iframe>
+        </div>
+
+        <div class="step slide" data-x="-3y" data-y="4x" data-rotate="90">
+            <p class="title">
+                <img src="img/md5.jpg">
+            </p>
+            <p class="title">128 bitów - 32 znaki</p>
+        </div>
+
+        <div class="step slide" data-x="-4y" data-y="4x" data-rotate="90">
+            <img src="img/NSA.png" class="logo-nsa">
+            <p class="title">
+                <img class="img-full" src="img/SecureHashAlghoritms.png">
+            </p>
+        </div>
+
+        <div class="step slide" data-x="-4y" data-y="4x" data-rotate="90" data-rotate-x="90">
+            <img class="img-full" src="img/Keccak.png">
+        </div>
+
+
+        <div class="step slide" data-x="-5y" data-y="4x" data-rotate="90" data-rotate-x="90">
+            <p class="title">Sunway-TaihuLight</p>
+            <p class="center">
+                <img src="img/Sunway_TaihuLight.jpg">
+            </p>
+        </div>
+
+        <div class="step slide" data-x="-5y" data-y="4x" data-rotate="90">
+            <p class="title">Paradoks urodzin</p>
+            <p class="center">
+                <img width="350" src="img/paradoks_dnia_urodzin2.jpg">
+                <img width="600" src="img/xwang.jpg">
+            </p>
+        </div>
+
+        <div class="step slide" data-x="-6y" data-y="4x" data-rotate="90">
+            <img class="img-full" src="img/password_incorrect.jpg">
+        </div>
+
+        <div class="step slide" data-x="-6y" data-y="4x" data-rotate="90" data-rotate-x="90">
+            <p class="title">Hasła [statystyka]</p>
+            <table class="table table-inverse">
+                <thead class="thead-default">
+                <tr>
+                    <th>Użytkownicy [%]</th>
+                    <th>Hasło</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>0.9</td>
+                    <td>password, 123456 lub 12345678</td>
+                </tr>
+                <tr>
+                    <td>1.6</td>
+                    <td>z listy top 10 haseł</td>
+                </tr>
+                <tr>
+                    <td>4.4</td>
+                    <td>z listy top 100 haseł</td>
+                </tr>
+                <tr>
+                    <td>9.7</td>
+                    <td>z listy top 500 haseł</td>
+                </tr>
+                <tr>
+                    <td>13.2</td>
+                    <td>z listy top 1 000 haseł</td>
+                </tr>
+                <tr>
+                    <td>30</td>
+                    <td>z listy top 10 000 haseł</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="step" data-x="-7y" data-y="4x" data-rotate="90" data-rotate-x="90">
+            <iframe class="iframe-full" src="http://localhost:8080/crypto"></iframe>
+        </div>
+
+        <div class="step slide" data-x="-8y" data-y="4x" data-rotate="90" data-rotate-x="90">
+            <div class="title"><img src="img/bcrypt_logo.jpg"></div>
+            <div class="title"><img class="img-full" src="img/bcrypt.png"></div>
+        </div>
+
+        <div class="step slide" data-x="-8y" data-y="4x" data-rotate="90" >
+            <div class="page-title"><img width="350" src="img/scrypt.png"></div>
+            <div class="page-title"><img width="900" src="img/scrypt.jpg"></div>
+        </div>
+
+        <div class="step" data-x="-9y" data-y="4x" data-rotate="90">
+            <img class="img-full" src="img/pwned.jpg">
+        </div>
+
+        <div class="step" data-x="-9y" data-y="4x" data-rotate="90" data-rotate-x="90">
+            <img class="img-full" src="img/pwned_result.jpg">
+        </div>
+
+        <div class="step slide" data-x="0" data-y="5x" data-rotate="90">
+            <div class="page-title">Szyfr Vernama [1917]</div>
+            <div class="center"><img  src="img/ver_keys.jpg"></div>
+        </div>
+
+        <div class="step slide" data-x="-1y" data-y="5x" data-rotate="90">
+            <div class="page-title">Whitfield Diffie, Martin Hellman 1976</div>
+            <div class="center"><img src="img/DiffieHellman.jpg"></div>
+        </div>
+
+
+        <div class="step slide" data-x="-2y" data-y="5x" data-rotate="90">
+            <p class="title">
+                “The RSA-2048 Challenge Problem would take<br/>
+                1 billion years with a classical computer.<br/>
+                ..........................................”
+            </p>
+            <p class="title">
+                –Dr. Krysta Svore, Microsoft Research
+            </p>
+        </div>
+
+        <div class="step slide" data-x="-3y" data-y="5x" data-rotate="90">
+            <p class="page-title">Algorytm faktoryzacji Shora</p>
+            <div class="row">
+                <div class="col-lg-8">
+                    <p class="point">1994 - publikacja algorytmu</p>
+                    <p class="point">2001 - dokonano faktoryzacji liczby 15</p>
+                    <p class="point">2011 - dokonano faktoryzacji liczby 21</p>
+                </div>
+                <div class="col-lg-4">
+                    <img src="img/PeterShore.jpg">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="step slide" data-x="-3y" data-y="5x" data-rotate="90" data-rotate-x="90">
+            <p class="title">
+                “The RSA-2048 Challenge Problem would take<br/>
+                1 billion years with a classical computer.<br/>
+                <b>A quantum computer could do it in 100 seconds”</b>
+            </p>
+            <p class="title">
+                –Dr. Krysta Svore, Microsoft Research
+            </p>
+        </div>
+
+
+        <div class="step" data-x="-4y" data-y="5x" data-rotate="90" data-rotate-x="90">
+            <img class="img-full" src="img/hacking-quantum-cryptography-58-638.jpg">
+        </div>
+
+
+        <div class="step slide" data-x="0" data-y="6x" data-rotate="90">
+            <img class="img-full" src="img/token.jpeg">
+        </div>
+
+        <div class="step slide" data-x="-1y" data-y="6x" data-rotate="90">
+            <img class="img-y-full" src="img/oath.png">
+        </div>
+
+        <div class="step slide" data-x="-1y" data-y="6x" data-rotate="90" data-rotate-x="90">
+            <img class="img-x-full" src="img/OAuth2.jpg">
+        </div>
+
+        <div class="step slide" data-x="-2y" data-y="6x" data-rotate="90" data-rotate-x="90">
+            <img class="img-y-full" src="img/bootstrap-social.png">
+        </div>
+
+        <div class="step slide" data-x="-3y" data-y="6x" data-rotate="90">
+            <img class="img-x-full" src="img/cas.jpg">
+        </div>
+
+        <div class="step slide" data-x="0x" data-y="7x" data-rotate="90">
+            <img class="img-x-full" style="margin-top: 60px" src="img/fingerprint.jpg">
+        </div>
+
+        <div class="step slide" data-x="-1y" data-y="7x" data-rotate="90">
+            <img class="img-x-full" style="margin-top: 60px" src="img/kinect_login.jpg">
+        </div>
+
+
+        <div class="step" data-x="-2x" data-y="0y" data-scale="2">
+            <img class="img-full" src="img/nie_przejdziesz.jpg">
+        </div>
+
+        <div class="step slide" data-x="-3y" data-y="1x" data-rotate="90">
+            <p class="title">Podstawowe kategorie autoryzacji</p>
+            <p class="point">1. Rola</p>
+            <p class="point">2. ACL (access control list)</p>
+            <p class="point">3. Reguła biznesowa</p>
+        </div>
+
+        <div class="step slide" data-x="-4y" data-y="1x" data-rotate="90">
+            <p class="title"><img src="img/role.jpg"></p>
+            <p class="title">
+                <img class="img-x-full" src="img/role_config.png">
+                <img class="img-x-full" src="img/pre_role.png">
+            </p>
+        </div>
+
+        <div class="step slide" data-x="-5y" data-y="1x" data-rotate="90">
+            <p class="title"><img src="img/aclexample.png"></p>
+            <p class="title">
+                <img class="img-x-full" src="img/pre_acl.png">
+            </p>
+        </div>
+
+        <div class="step slide" data-x="-6y" data-y="1x" data-rotate="90">
+            <p class="title"><img width="900" src="img/business_rule.jpg"></p>
+            <p class="title">
+                <img class="img-x-full" src="img/pre_object.png">
+            </p>
+        </div>
+
+        <div class="step" data-x="-4x" data-y="0y" data-scale="2">
+            <img class="img-full" src="img/data-integrity-blog.jpg">
+        </div>
+
+        <div class="step" data-x="-4x" data-y="-2y" data-rotate="180">
+            <img class="img-full" src="img/HTML5-Form-Validation.jpg">
+        </div>
+
+        <div class="step" data-x="-4x" data-y="-3y" data-rotate="180">
+            <img class="img-full" src="img/di_check.jpg">
+        </div>
+
+
+        <div class="step" data-x="-6x" data-y="0" data-scale="2">
+            <img class="img-full" class="picture" src="img/mr-robot.jpg">
+        </div>
+
+        <div class="step slide" data-x="-6x" data-y="1x" data-rotate="90">
+            <img class="img-full" src="img/OWASP_Top-10_2013.png"></p>
+        </div>
+
+        <div class="step" data-x="-6x" data-y="2x" data-rotate="90">
+            <iframe class="iframe-full" src="http://localhost:8080/"></iframe>
+        </div>
+
+        <div class="step slide" data-x="-6x" data-y="3x" data-rotate="90">
+            <div class="card">
+                <div class="card-header text-info text-lg-left">
+                    From: warszawa-jug@googlegroup.com
+                </div>
+                <div class="row  card-block">
+                    <div class="col-lg-8">
+                        <img src="img/java.png">
+                        <h2>JAVA sprzedana. Kupił ją Microsoft</h2>
+                        <form method="post" action="http:\\localhost:8080\delete">
+                            <input type="hidden" name="cardId" value="3"/>
+                            <input class="btn btn-link btn-lg" type="submit" value="...dowiedz sie więcej"/>
+                        </form>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="img/warszawajug.gif">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="step" data-x="-6x" data-y="4x" data-rotate="90">
+            <p class="title"><img class="img-full" src="img/csrf.png"></p>
+        </div>
+
+        <div class="step" data-x="-6x" data-y="5x" data-rotate="90">
+            <iframe class="iframe-full" src="http://localhost:8080/"></iframe>
+        </div>
+
+        <div class="step slide" data-x="-6x" data-y="6x" data-rotate="90">
+            <div class="card">
+                <div class="card-header">
+                    <p class="text-lg-center">Dziękujemy za udział w konferencji 4Developers</p>
+                </div>
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p class="text-success text-lg-left">Niezwykle miło jest nam poinformować Cię, że otrzymaliśmy do rozlosowania 10 licencji Intelij Idea z dożywotnim supportem.</p>
+                            <br/>
+                            <p>Aby licencja trafiła właśnie do Ciebie kliknij 2 razy w przycisk <b>pobierz klucz</b>     w odstępie dokładnie 15 sekund.</p>
+                            <br/>
+                        </div>
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-5">
+                            <div class="card-img">
+                                <img width="200px" src="img/intellijIDEA.png" alt="">
+                                <img src="img/4dev_logo.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="card-footer text-lg-center">
+                            <p class="text-info text-sm-center">Nagroda trafi do osób u których czas pomiędzy kliknięciami będzie najbiższy 15 sekundom</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="button-click-jacking btn btn-info">Losuj klucz</p>
+            <iframe class="iframe-click-jacking" id="apka" src="http://localhost:8080/"></iframe>
+        </div>
+
+        <div class="step slide" data-x="-6x" data-y="7x" data-rotate="90">
+            <div class="card card-block">
+                <div class="card-header">
+                    <p class="text-lg-center">Clickjacking</p>
+                </div>
+                <div class="card-text">
+                    <div class="center">
+                        <img width="700px" src="img/Clickjacking.jpg">
+                    </div>
+                    <p>X-Frame-Options: DENY</p>
+                    <p>X-Frame-Options: SAMEORIGIN</p>
+                    <p>X-Frame-Options: ALLOW-FROM https://itdonat.pl/</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="step" data-x="-6x" data-y="8x" data-rotate="90">
+            <iframe class="iframe-full" src="http://localhost:8080/attack/xss"></iframe>
+        </div>
+
+        <div class="step slide" data-x="-6x" data-y="9x" data-rotate="90">
+            <div class="card card-block">
+                <div class="card-header">
+                    <p class="text-lg-center">Cross-site scripting (XSS)</p>
+                </div>
+                <div class="card-text">
+                    <div class="center">
+                        <img width="600px" src="img/xss.png">
+                    </div>
+                    <p>X-XSS-Protection: 0</p>
+                    <p>X-XSS-Protection: 1</p>
+                    <p>X-XSS-Protection: 1; mode=block</p>
+                    <br/>
+                    <p>Jsoup.clean(name, Whitelist.basicWithImages());</p>
+                    <br/>
+                    <p>Set-Cookie:JSESSIONID=CBB2614300A637...;path=/;<b>HttpOnly</b></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="step" data-x="-6x" data-y="10x" data-rotate="90">
+            <img src="img/ics-cert.jpeg"/>
+        </div>
+
+        <div class="step slide" data-x="-6x" data-y="11x" data-rotate="90">
+            <img class="img-x-full" src="img/nastolatek_komputer.jpg"/>
+        </div>
+
+        <div class="step slide" data-x="-6x" data-y="12x" data-rotate="90">
+            <img class="img-x-full" src="img/beef-webcam.jpg"/>
+        </div>
+
+        <div class="step slide" data-x="-6x" data-y="13x" data-rotate="90">
+            <div class="card card-block">
+                <div class="card-header">
+                    <p class="text-lg-center">HTTP Strict Transport Security(HSTS)</p>
+                </div>
+                <div class="card-text">
+                    <div class="center">
+                        <img src="img/hsts_flow.png">
+                    </div>
+                    <br/>
+                    <p>Strict-Transport-Security: max-age=31536000; includeSubDomains</p>
+                    <br/>
+                    <p>Set-Cookie:JSESSIONID=CBB2614300A637...;path=/;<b>Secure</b>;HttpOnly</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="step slide" data-x="-6x" data-y="14x" data-rotate="90">
+            <div class="card card-block">
+                <div class="card-header">
+                    <p class="text-lg-center">Content Security Policy</p>
+                </div>
+                <div class="card-text">
+                    <div class="center">
+                        <img src="img/content-security-policy.jpg">
+                    </div>
+                    <p>Content-Security-Policy: </p>
+                    <p class="tab"><b>default-src</b> 'none';</p>
+                    <p class="tab"><b>script-src</b> 'self' www.google-analytics.com ajax.googleapis.com;</p>
+                    <p class="tab"><b>connect-src</b> 'self';</p>
+                    <p class="tab"><b>img-src</b> 'self';</p>
+                    <p class="tab"><b>style-src</b> 'self' css.example.com;</p>
+                    <br/>
+                </div>
+            </div>
+        </div>
+
+        <div class="step slide" data-x="-6x" data-y="15x" data-rotate="90">
+            <div class="card card-block">
+                <div class="card-header">
+                    <p class="text-lg-center">Content Security Policy [Report Only]</p>
+                </div>
+                <div class="card-text">
+                    <div class="center">
+                        <img src="img/Content-Security-Policy-report.png">
+                    </div>
+                    <p>Content-Security-Policy-Report-Only: </p>
+                    <p class="tab"><b>report-uri </b> /csp-violation-report-endpoint/;</p>
+                    <br/>
+                </div>
+            </div>
+        </div>
+
+        <div class="step slide" data-x="-6x" data-y="16x" data-rotate="90">
+            <div class="card card-block">
+                <div class="card-header">
+                    <p class="text-lg-center">Content Type Attack</p>
+                </div>
+                <div class="card-text">
+                    <br/>
+                    <div class="center">
+                        <img src="img/airplane-cat.jpg">
+                    </div>
+                    <br/>
+                    <p>X-Content-Type-Options: nosniff</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="step slide" data-x="-6x" data-y="17x" data-rotate="90">
+            <div class="card card-block">
+                <div class="card-header">
+                    <p class="text-lg-center">HTTP Public Key Pinning (HPKP)</p>
+                </div>
+                <div class="card-text">
+                    <div class="center">
+                        <img src="img/HPKP.png">
+                    </div>
+                    <p>Public-Key-Pins:</p>
+                    <p class="tab"><b>pin-sha256</b>="d6qzRu9zOECb90Uez27xWltNsj0e1Md7GkYYkVoZWmM=";</p>
+                    <p class="tab"><b>max-age=10000</b>;</p>
+                    <p class="tab"><b>includeSubDomains</b>;</p>
+                    <p class="tab"><b>report-uri</b> report.example.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="step slide" data-x="-6x" data-y="18x" data-rotate="90">
+            <div class="card card-block">
+                <div class="card-header">
+                    <p class="text-lg-center">Referrer Policy</p>
+                </div>
+                <div class="card-text">
+                    <div class="center">
+                        <img width="700px" src="img/referer-policy.png">
+                    </div>
+                    <p class="text-lg-center"><b>Referer:http://localhost:8080/login</b></p>
+                    <br/>
+                    <p>Referrer-Policy: no-referrer</p>
+                    <br/>
+                    <p class="tab">no-referrer-when-downgrade [HTTPS --> HTTP]</p>
+                    <p class="tab">same-origin</p>
+                    <p class="tab">origin</p>
+                    <p class="tab">...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="step slide" data-x="-6x" data-y="19x" data-rotate="90">
+            <div class="card card-block">
+                <div class="card-header">
+                    <p class="text-lg-center">Podatności związane z XXE (XML eXternal Entity)</p>
+                </div>
+                <div class="card-text">
+                    <div class="center">
+                        <img src="img/XXEA.png">
+                    </div>
+                    <br/>
+                    <a href="img/XML%20External%20Entity%20(XXE)%20Prevention%20Cheat%20Sheet%20-%20OWASP.pdf" target="_blank">The following versions of the Spring Framework are vulnerable to XXE:</a>
+                    <p class="tab">3.0.0 to 3.2.3 (Spring OXM & Spring MVC)</p>
+                    <p class="tab">4.0.0.M1 (Spring OXM)</p>
+                    <p class="tab">4.0.0.M1-4.0.0.M2 (Spring MVC)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="step slide" data-x="-6x" data-y="20x" data-rotate="90">
+            <div class="card card-block">
+                <div class="card-header">
+                    <p class="text-lg-center">Deserializacja niezaufanych danych</p>
+                </div>
+                <div class="card-text">
+                    <div class="center">
+                        <img src="img/deserialization.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="step" data-x="-6x" data-y="21x" data-rotate="90">
+            <img class="img-full" src="img/cve.png">
+        </div>
+
+
+        <div class="step" data-x="-8x" data-y="0" data-scale="2">
+            <img class="img-full" src="img/gate-security-fail.jpg">
+        </div>
+
+        <div class="step" data-x="-8x" data-y="1x" data-rotate="90">
+            <img class="img-full"  src="img/security-chain.jpg">
+        </div>
+
+        <div class="step" data-x="-8x" data-y="2x" data-rotate="90">
+            <img class="img-full" src="img/luke-cage.jpg">
+        </div>
+
+        <div class="step" data-x="-9x" data-y="-3x" data-scale="10">
+            <img class="img-x-full" src="img/4devQA.jpg">
+        </div>
+
+
+        <script src="js/impress.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/presentation.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $('#apka').on('load', function(){
+                    $(this).show();
+                    console.log('load the iframe');
+                    console.log($(this).contents());
+                });
+            });
+        </script>
+
+<!--
+        <script>impress().init();</script>
+-->
+    </div>
+</body>
+</html>

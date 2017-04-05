@@ -1,0 +1,158 @@
+.name {
+    display: block;
+    font-size: 70px;
+    line-height: 72px;
+    margin-top: 150px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.title {
+    display: block;
+    font-size: 50px;
+    line-height: 72px;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.page-title {
+    display: block;
+    font-size: 50px;
+    line-height: 72px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.footer {
+    position:absolute;
+    bottom:0;
+    height:60px;
+    width: 90%;
+    display: block;
+    margin-right:10px;
+}
+
+.logo-wjug {
+    position:absolute;
+    right: 0;
+}
+
+.logo-nsa {
+    position:absolute;
+    right: 20px;
+}
+
+
+.footer-logo {
+    text-align: right;
+    position: absolute;
+    left: 0;
+    bottom: 6px;
+}
+
+.footer-text {
+    text-align: right;
+    position: absolute;
+    width: 100%;
+    right: 0;
+}
+
+.point {
+    display: block;
+    font-size: 40px;
+    line-height: 72px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #122b40;
+}
+
+.picture {
+    position: absolute;
+    top: -350px;
+    left:-100px;
+}
+
+.center {
+    text-align: center;
+}
+
+.img-full {
+    width: 100%;
+    height: 100%;
+}
+
+.iframe-full {
+    width:110%;
+    height:800px;
+    border:none;
+    margin-left:-50px;
+    overflow-x:hidden;
+    overflow-Y:hidden;
+}
+
+.iframe {
+    width:110%;
+    height:700px;
+    border:none;
+    margin-left:-50px;
+    overflow-x:hidden;
+    overflow-Y:hidden;
+}
+
+
+th {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+td {
+    text-align: left;
+    font-size: 35px;
+}
+
+th, td {
+    padding: 10px;
+}
+
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.img-y-full {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: 100%;
+}
+
+.img-x-full {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}
+
+.iframe-click-jacking{
+    position: absolute;
+    width: 1100px;
+    height: 400px;
+    top: 100px;
+    left:50px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.button-click-jacking{
+    position: absolute;
+    top:350px;
+    left:900px;
+}
+
+.tab {
+    margin-left: 40px;
+}

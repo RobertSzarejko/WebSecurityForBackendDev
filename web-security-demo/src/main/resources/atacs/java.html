@@ -1,0 +1,58 @@
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Z ostaniej chwili</title>
+    <script src="jquery-3.1.1.min.js"></script>
+</head>
+<body>
+    <div style="margin: auto;">
+        <img src="java.png">
+        <h1 id="post-btn">JAVA sprzedana. Kupił ją Microsoft</h1>
+        <form id="del-post" method="post" action="http:\\localhost\delete">
+            <input type="hidden" name="cardId" value="3"/>
+            <input type="submit" value="...dowiedz sie więcej"/>
+        </form>
+        <button id="button">Post</button>
+    </div>
+    <script>
+
+        $(document).ready(function() {
+
+/*            $.ajaxSetup({
+                'beforeSend': function(xhr) {
+                    xhr.setRequestHeader("AJAX", "true");
+                }
+            });*/
+
+            $.ajaxPrefilter( "json script", function( options ) {
+                options.crossDomain = true;
+            });
+
+            $("#button").click(function(){
+                $.ajax({
+                    type: 'POST',
+                    url: "http://localhost:8080/delete",
+                    data: {cardId: "3"},
+                    headers: {"Access-Control-Allow-Origin":"*"}
+                })
+                .done(function (data) {
+                    alert(data);
+                });
+
+
+/*
+                $.post("http://localhost:8080/delete",
+                {
+                    cardId: "3"
+                },
+                function(data, status){
+                    alert("Data: " + data + "\nStatus: " + status);
+                });
+*/
+            });
+
+        });
+
+    </script>
+</body>
+</html>

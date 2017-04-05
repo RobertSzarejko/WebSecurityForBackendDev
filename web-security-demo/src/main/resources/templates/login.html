@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:tiles="http://www.thymeleaf.org" xmlns:sec="http://www.springframework.org/security/tags">
+<head>
+    <title tiles:fragment="title">Messages : Create</title>
+    <link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+    <link href="../static/css/demo.css" th:href="@{/css/demo.css}" rel="stylesheet" />
+</head>
+<body>
+<div tiles:fragment="content">
+    <div class="container">
+        <form name="f" th:action="@{/login}" method="post" class="form-login">
+            <input type="text" style="display: none" />
+            <input type="password" style="display: none" />
+            <div class="imgcontainer">
+                <img src="../static/img/uncle-sam.jpg" th:src="@{/img/uncle-sam.jpg}" alt="Avatar" class="avatar"/>
+            </div>
+
+            <div th:if="${param.error}" class="alert alert-error">
+                Niepoprawny login i hasło.
+            </div>
+            <div th:if="${param.logout}" class="alert alert-success">
+                Zostałes wylogowany.
+            </div>
+
+            <div class="row">
+                <label><b>Użytkownik</b></label>
+                <input type="text" placeholder="Wprowadź login" name="username" autocomplete="off"/>
+                <label><b>Hasło</b></label>
+                <input type="password" placeholder="Wprowadź hasło" name="password" autocomplete="off"/>
+                <button type="submit">Zaloguj</button>
+                <input type="checkbox" checked="checked" name="remember-me"/> Zapamietaj mnie
+            </div>
+
+            <div class="row" style="background-color:#f1f1f1">
+                <button type="button" class="cancelbtn">Anuluj</button>
+                <span class="psw">Zapomniałem <a href="#">hasła?</a></span>
+            </div>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>

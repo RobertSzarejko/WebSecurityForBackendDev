@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Counter</title>
+    <link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+    <link href="../static/css/bruteForce.css" th:href="@{/css/bruteForce.css}" rel="stylesheet" />
+    <script src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+    <script src="../static/js/jquery.number.js" th:src="@{/js/jquery.number.js}"></script>
+    <script src="../static/js/bruteForce.js" th:src="@{/js/bruteForce.js}"></script>
+</head>
+<body>
+
+
+
+<div class="container bruteForce">
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <!--/*@thymesVar id="bruteForceData" type="pl.itdonat.demo.wsfbd.encryption.BruteForceData"*/-->
+            <div class="row" th:object="${bruteForceData}">
+                <div class="col-lg-8">
+                    <input class="input-lg hash" type="text" id="hash" th:value="*{hash}"/>
+                </div>
+                <div class="col-lg-2">
+
+                    <select id="algorithm" name="algorithm" class="input-lg algorithm" th:remove="all-but-first" th:field="*{algorithm}">
+                        <option th:each="alg : *{algorithmValues}" th:value="${alg.name()}" th:text="${alg.description}">Credit card</option>
+                    </select>
+
+<!--
+                    <input class="input-lg algorithm" type="text" id="algorithm" name="algorithm" disabled="disabled" th:value="${algorithm}"/>
+-->
+                </div>
+                <div class="col-lg-2 text-center">
+                    <button id="wynik" class="btn btn-lg btn-info">Szukaj</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="bruteForceData">
+        <table>
+            <tbody></tbody>
+            <tr>
+                <td>
+                    <p class="digit" id="D1">0</p>
+                </td>
+                <td>
+                    <p class="digit" id="D2">0</p>
+                </td>
+                <td>
+                    <p class="digit" id="D3">0</p>
+                </td>
+                <td>
+                    <p class="digit" id="D4">0</p>
+                </td>
+                <td>
+                    <p class="digit" id="D5">0</p>
+                </td>
+                <td>
+                    <p class="digit" id="D6">0</p>
+                </td>
+                <td>
+                    <p class="digit" id="D7">0</p>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    <div id="timer">0 ms</div>
+
+</div>
+
+</body>
+</html>

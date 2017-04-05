@@ -1,0 +1,104 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:tiles="http://www.thymeleaf.org" xmlns:sec="http://www.springframework.org/security/tags">
+<head>
+    <title tiles:fragment="title">Messages : Create</title>
+    <link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container">
+        <div class="row navbar navbar-form alert alert-warning">
+            <div class="col-lg-10">
+                <h3 class="navbar-text" th:text="${userName}"></h3>
+            </div>
+            <div class="col-lg-2">
+                <form name="f" th:action="@{/logout}" method="post">
+                    <button type="submit" class="btn btn-lg btn-info">Wyloguj</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="text-info text-center">Twoje kary kredytowe</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Wystawca</th>
+                            <th>Numer</th>
+                            <th>Data ważności</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="card, row : ${creditCards}">
+                            <th th:text="${row.index+1}">1</th>
+                            <td th:text="${card.kind}">card.kind</td>
+                            <td th:text="${card.number}">card.number</td>
+                            <td th:text="${#calendars.format(card.expiredDate(),'MM/yyyy')}">card.expiredDate</td>
+                            <td>
+                                <form method="post" th:action="@{/delete/}">
+                                    <input type="hidden" name="cardId" th:value="${card.id}"/>
+                                    <button type="submit" class="btn btn-default">Usuń [post]</button>
+                                </form>
+                            </td>
+                            <td><a class="btn btn-sm btn-danger" th:href="@{'/delete/'+${card.id}}">Usuń [get]</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="text-info text-center">Dostępne kary kredytowe</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Wystawca</th>
+                            <th>Numer</th>
+                            <th>Data ważności</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="card, row : ${allCreditCards}">
+                            <th th:text="${row.index+1}">1</th>
+                            <td th:text="${card.kind}">card.kind</td>
+                            <td th:text="${card.number}">card.number</td>
+                            <td th:text="${#calendars.format(card.expiredDate(),'MM/yyyy')}">card.expiredDate</td>
+                            <td>
+                                <form method="post" th:action="@{/delete/}">
+                                    <input type="hidden" name="cardId" th:value="${card.id}"/>
+                                    <button type="submit" class="btn btn-default">Usuń [post]</button>
+                                </form>
+                            </td>
+                            <td><a class="btn btn-sm btn-danger" th:href="@{'/delete/'+${card.id}}">Usuń [get]</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+    <script src="../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>
