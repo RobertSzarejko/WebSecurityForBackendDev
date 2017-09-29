@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Counter</title>
+    <link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+    <link href="../static/css/crypto.css" th:href="@{/css/crypto.css}" rel="stylesheet" />
+    <script src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+    <script src="../static/js/crypto.js" th:src="@{/js/crypto.js}"></script>
+</head>
+<body>
+
+
+<div class="container crypto">
+
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <!--/*@thymesVar id="data" type="pl.itdonat.demo.wsfbd.encryption.CryptoData"*/-->
+                <form class="form-inline" th:action="@{/crypto_one}" method="post" th:object="${data}">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <input class="input-lg text-info planeTextOne" type="text" th:field="*{value}"/>
+                        </div>
+                        <div class="col-lg-2">
+                            <select class="input-lg algorithm" th:field="*{algorithm}">
+                                <option th:each="alg : *{algorithmValues}" th:value="${alg.name()}" th:text="${alg.description}">Credit card</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-2">
+                            <input class="btn btn-info btn-lg" type="submit" value="Kodowanie"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-body">
+
+                <table class="table table-striped">
+                    <thead>
+                    <tr style="font-size: large">
+                        <th>Algorytm</th>
+                        <th>Czas [ms]</th>
+                        <th>Hash</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!--/*@thymesVar id="valueList" type="java.util.List<pl.itdonat.demo.wsfbd.encryption.encode.EncodeData>"*/-->
+                    <tr th:each="data : ${valueList}">
+                        <th>
+                            <a class="btn btn-lg btn-primary" style="width: 100px" target="_blank" th:href="@{'/bruteForce/'+${data.getAlgorithm()}+'/'+${data.getEncode()}}" th:text="${data.getAlgorithm().getDescription()}"></a>
+                        </th>
+                        <td>
+                            <p class="btn btn-lg btn-info" style="width: 120px" th:text="${data.getDuration()}"></p>
+                        </td>
+                        <td>
+                            <p style="font-size: large; word-wrap:break-word;width: 800px" th:text="${data.getEncode()}"></p>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

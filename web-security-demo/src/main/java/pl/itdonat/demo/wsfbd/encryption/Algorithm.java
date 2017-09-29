@@ -1,25 +1,27 @@
 package pl.itdonat.demo.wsfbd.encryption;
 
+import lombok.Getter;
+
 /**
  * Created by r.szarejko on 2017-03-22.
  */
 public enum Algorithm {
 
-    MD5("MD5"),
-    SHA1("SHA-1"),
-    SHA256("SHA-256"),
-    SHA512("SHA-512"),
-    BCRYPT("BCrypt"),
-    PBKDF("Pbkdf"),
-    SCRYPT("SCrypt");
+    MD5("MD5", 1),
+    SHA1("SHA-1", 2),
+    SHA256("SHA-256", 3),
+    SHA512("SHA-512", 4),
+    BCRYPT("BCrypt", 5),
+    PBKDF("Pbkdf", 6),
+    SCRYPT("SCrypt", 7);
 
-    private String description;
+    @Getter
+    private final String description;
+    @Getter
+    private final Integer position;
 
-    Algorithm(String description) {
+    Algorithm(String description, int position) {
         this.description = description;
-    }
-
-    public String getDescription() {
-        return description;
+        this.position = position;
     }
 }

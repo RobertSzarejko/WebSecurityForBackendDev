@@ -38,6 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     "/js/**",
                     "/h2-console/**",
                     "/crypto/**",
+                    "/crypto_one/**",
                     "/bruteForce/**",
                     "/attack/**"
                 ).permitAll()

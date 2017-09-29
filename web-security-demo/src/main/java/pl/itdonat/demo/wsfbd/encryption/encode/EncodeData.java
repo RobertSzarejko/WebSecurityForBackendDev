@@ -11,8 +11,12 @@ import pl.itdonat.demo.wsfbd.encryption.Algorithm;
 @Builder
 public class EncodeData {
 
-    private Algorithm algorithm;
-    private String encode;
-    private double duration;
+    private final Algorithm algorithm;
+    private final String encode;
+    private final double duration;
+
+    public int getPosintion(){
+        return algorithm.getPosition();
+    }
 
 }

@@ -11,6 +11,7 @@ import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * Created by r.szarejko on 2017-03-22.
@@ -29,9 +30,17 @@ public class EncodeService {
     public List<EncodeData> prepareEncodedValueByAlgorithmMap(String plainText){
         return Arrays.stream(Algorithm.values())
             .map(algorithm -> algorithmEncodeMap.get(algorithm).encodeData(algorithm, plainText))
-            .sorted(Comparator.comparingDouble(EncodeData::getDuration))
+            .sorted(Comparator.comparingInt(EncodeData::getPosintion))
             .collect(Collectors.toList());
     }
+
+    public List<EncodeData> prepareEncodedValueByAlgorithm(String plainText, Algorithm algorithm, int elements){
+
+        return Stream.iterate(1, n -> n +1).limit(elements)
+                .map(pos -> algorithmEncodeMap.get(algorithm).encodeData(algorithm, plainText))
+                .collect(Collectors.toList());
+    }
+
 
     @PostConstruct
     private void prepareEncodeByAlgorithmMap(){
@@ -44,7 +53,10 @@ public class EncodeService {
     }
 
     private Encode getEncode(Collection<Encode> values, Algorithm algorithm) {
-        return values.stream().filter(encode -> encode.isCorrectAlgorithm(algorithm)).findAny().orElseThrow(() -> new IllegalArgumentException("Unaccepted algorithm: "+algorithm));
+        return values.stream()
+                .filter(encode -> encode.isCorrectAlgorithm(algorithm))
+                .findAny()
+                .orElseThrow(() -> new IllegalArgumentException("Unaccepted algorithm: "+algorithm));
     }
 
     public String bruteForce(String hash, Algorithm algorithm) {
