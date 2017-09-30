@@ -12,8 +12,8 @@ public enum Algorithm {
     SHA256("SHA-256", 3),
     SHA512("SHA-512", 4),
     BCRYPT("BCrypt", 5),
-    PBKDF("Pbkdf", 6),
-    SCRYPT("SCrypt", 7);
+    SCRYPT("SCrypt", 6),
+    PBKDF("Pbkdf", 7);
 
     @Getter
     private final String description;
