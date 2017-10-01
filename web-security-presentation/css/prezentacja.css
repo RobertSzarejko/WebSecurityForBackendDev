@@ -173,3 +173,12 @@ table, th, td {
 .tab {
     margin-left: 40px;
 }
+
+#impress .step .substep {
+    opacity: 0;
+}
+
+#impress .step .substep.substep-visible {
+    opacity: 1;
+    transition: opacity 1s;
+}
