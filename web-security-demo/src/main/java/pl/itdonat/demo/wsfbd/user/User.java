@@ -1,12 +1,14 @@
 package pl.itdonat.demo.wsfbd.user;
 
 import lombok.Data;
+import org.hibernate.validator.constraints.NotBlank;
 import pl.itdonat.demo.wsfbd.jpa.LocalDatePersistenceConverter;
 
 import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 /**
@@ -18,7 +20,9 @@ import java.time.LocalDate;
 public class User {
 
     @Id
+    @NotNull
     private Long id;
+    @NotBlank
     private String login;
     private String firstName;
     private String middleName;

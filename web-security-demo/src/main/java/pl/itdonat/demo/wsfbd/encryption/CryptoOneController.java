@@ -32,7 +32,7 @@ public class CryptoOneController {
 
     @PostMapping
     public String postTheSame(Model model, @ModelAttribute(value = "data") CryptoData data){
-        List<EncodeData> encodeData = encodeService.prepareEncodedValueByAlgorithm(data.getValue(), data.getAlgorithm(), 10);
+        List<EncodeData> encodeData = encodeService.prepareEncodedValueByAlgorithm(data.getValue(), data.getAlgorithm(), 6);
         model.addAttribute("data", data);
         model.addAttribute("valueList", encodeData);
         return "crypto_one";
